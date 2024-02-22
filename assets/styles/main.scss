@@ -1,0 +1,246 @@
+.container {
+	padding-top: 50px;
+	margin: 0 auto;
+	max-width: 1170px;
+}
+.list-reset {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.weather__block {
+	border-radius: 40px;
+	background: linear-gradient(
+		135deg,
+		rgb(8, 36, 79) 0%,
+		rgb(19, 76, 181) 47.379%,
+		rgb(11, 66, 171) 100%
+	);
+	margin: 0 auto;
+	box-shadow: 0 0 15px grey;
+	min-height: 100px;
+	max-width: 350px;
+	display: grid;
+	grid-template-columns: 1fr;
+	column-gap: 15px;
+	padding: 40px;
+	grid-auto-rows: max-content;
+	border-radius: 10px;
+	align-items: center;
+}
+
+.weather__temp {
+	font-size: 64px;
+	font-weight: 600;
+	line-height: 76px;
+	letter-spacing: 0%;
+	text-align: center;
+	display: block;
+	text-align: center;
+	border-radius: 10px;
+	color: #fff;
+}
+.weather__city {
+	margin: 0;
+	color: #fff;
+	font-size: 64px;
+	font-weight: 600;
+	line-height: 76px;
+	letter-spacing: 0%;
+	text-align: center;
+}
+.weather__descr {
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: #fff;
+}
+.weather__img {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.weather__img img {
+	width: 90px;
+	height: 90px;
+	display: block;
+}
+
+.weather__wrapper-descr {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+}
+.weather__wrapper-min {
+	margin-bottom: 30px;
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+.weather__minmax {
+	display: block;
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21px;
+	letter-spacing: 0%;
+	text-align: center;
+}
+
+.wind {
+	margin-bottom: 15px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+	background: rgb(1, 41, 97);
+	padding: 9px 20px;
+}
+.wind__item {
+	color: #fff;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 10px;
+	background-size: contain;
+}
+.wind__list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.wind__item-2 {
+	background-image: url('../img/humidies.svg');
+}
+.wind__item-3 {
+	padding-left: 25px;
+	background-image: url('../img/wind.svg');
+}
+.wind__item-1 {
+	padding-left: 0;
+}
+.forecast__wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 15px;
+}
+.forecast__title {
+	margin: 0;
+	background-image: url('../img/calendar.svg');
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	color: rgb(255, 255, 255);
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 24px;
+	letter-spacing: 0%;
+	text-align: left;
+}
+.item__date {
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 22px;
+	letter-spacing: 0%;
+	text-align: left;
+}
+.forecast__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 10px;
+}
+.item__temp {
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+	letter-spacing: 0%;
+	text-align: center;
+}
+.forecast__item {
+	display: flex;
+	justify-content: space-between;
+}
+.item__temp-wrapper {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+.form {
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+}
+.form__input {
+	color: #fff;
+	padding: 10px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	width: 100%;
+	transition: border 0.3s ease-in-out;
+	&::placeholder {
+		color: #fff;
+	}
+}
+.form__input:focus {
+	outline: none;
+	border: 1px solid rgb(17, 248, 9);
+}
+.form__btn {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: #fff;
+	padding: 10px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+		border 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+	&:focus-visible {
+		outline: none;
+		border: 1px solid rgb(17, 248, 9);
+		color: rgb(17, 248, 9);
+	}
+	&:hover:not(:focus-visible) {
+		background-color: #fff;
+		color: rgb(1, 41, 97);
+	}
+	&:active:not(:focus-visible) {
+		transform: scale(0.93);
+	}
+}
+
+.errors__list {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.errors__item {
+	color: #fff;
+	background-color: rgb(167, 3, 3);
+	padding: 30px;
+	width: 300px;
+	text-align: center;
+	border-radius: 10px;
+}
+.preload__title {
+	margin: 0;
+	color: rgb(255, 255, 255);
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 24px;
+	letter-spacing: 0%;
+	text-align: center;
+}
+.preload__wrapper {
+	padding-top: 50px;
+}
