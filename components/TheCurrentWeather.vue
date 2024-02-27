@@ -111,7 +111,12 @@ onMounted(async () => {
 		longitude: coordinates.longitude,
 		latitude: coordinates.latitude,
 	}
-	await store.getWeatherCity(undefined, coords)
-	city.value = store.getCity
+	if (!store.city.name) {
+		city.value = store.getCity
+		await store.getWeatherCity(undefined, coords)
+	} else {
+		city.value = store.city
+		showData.value = true
+	}
 })
 </script>

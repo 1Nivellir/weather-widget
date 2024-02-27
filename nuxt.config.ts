@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	devtools: { enabled: true },
+	app: {
+		pageTransition: { name: 'page', mode: 'out-in' },
+	},
 	css: ['~/assets/styles/main.css'],
 	modules: [
 		// ...
@@ -9,8 +12,9 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			API_KEY: process.env.API_KEY,
-			URL_WEATHER_API: process.env.URL_WEATHER_API,
-			URL_WEATHER_FORECAST: process.env.URL_WEATHER_FORECAST,
+		},
+		server: {
+			API_KEY: process.env.API_KEY,
 		},
 	},
 	plugins: ['~/plugins/geolocation.ts'],

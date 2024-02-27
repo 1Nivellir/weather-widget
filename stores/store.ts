@@ -15,6 +15,9 @@ export const useMyStoreStore = defineStore({
 		getError: (state) => state.error,
 	},
 	actions: {
+		getCityAction() {
+			return this.city
+		},
 		async getWeatherCity(city?: string, coords?: Coords) {
 			try {
 				const [weatherData, forecastData] = await Promise.all([
@@ -40,7 +43,7 @@ export const useMyStoreStore = defineStore({
 			tomorrow.setDate(tomorrow.getDate() + 1)
 			tomorrow.setHours(0, 0, 0, 0)
 			const threeDaysLater = new Date(now)
-			threeDaysLater.setDate(threeDaysLater.getDate() + 3)
+			threeDaysLater.setDate(threeDaysLater.getDate() + 4)
 			return arr.filter((item) => {
 				const date = new Date(item.dt_txt)
 				return date >= tomorrow && date < threeDaysLater

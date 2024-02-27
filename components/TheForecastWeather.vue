@@ -2,11 +2,12 @@
 	<div>
 		<div class="forecast__wrapper">
 			<h2 class="forecast__title">Следующий прогноз</h2>
-			<ul class="forecast__list list-reset">
-				<li
+			<ul class="forecast__list list-reset" v-if="listForecast">
+				<NuxtLink
 					class="forecast__item item"
 					v-for="item in listForecast"
-					:key="item.name"
+					:key="item.dt_txt"
+					:to="`details/${getDate(item.dt_txt)}`"
 				>
 					<span class="item__date">{{ getDate(item.dt_txt) }}</span>
 					<div class="item__temp-wrapper">
@@ -18,7 +19,7 @@
 							>Max: {{ item.main.temp_max.toFixed(0) }}°</span
 						>
 					</div>
-				</li>
+				</NuxtLink>
 			</ul>
 		</div>
 	</div>
@@ -29,7 +30,7 @@ import { getDate, getOneDay } from './helpers'
 const store = useMyStoreStore()
 
 const listForecast = computed(() => {
-	return getOneDay(store.getForecast)
+	return getOneDay(store.getForecast.slice(0, 24))
 })
 </script>
 

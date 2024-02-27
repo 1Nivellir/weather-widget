@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<TheCurrentWeather />
+		<NuxtPage />
 	</div>
 </template>
 

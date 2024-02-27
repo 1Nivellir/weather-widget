@@ -1,3 +1,4 @@
+@import 'details';
 .container {
 	padding-top: 50px;
 	margin: 0 auto;
@@ -157,12 +158,13 @@
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 22px;
-	letter-spacing: 0%;
 	text-align: center;
 }
 .forecast__item {
+	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
+	text-decoration: none;
 }
 .item__temp-wrapper {
 	display: flex;
@@ -243,4 +245,14 @@
 }
 .preload__wrapper {
 	padding-top: 50px;
+}
+.page-enter-active,
+.page-leave-active {
+	transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+	opacity: 0;
+	transform: translateX(200px);
+	filter: blur(1rem);
 }

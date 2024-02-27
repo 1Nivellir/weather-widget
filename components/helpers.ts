@@ -5,7 +5,7 @@ export const getDate = (text: string) => {
 	const year = date.getFullYear()
 	const month = (date.getMonth() + 1).toString().padStart(2, '0')
 	const day = date.getDate().toString().padStart(2, '0')
-	return `${day}-${month}-${year}`
+	return `${year}-${month}-${day}`
 }
 export function getOneDay(arr: City[]) {
 	const result: Record<string, City> = {}
@@ -29,4 +29,11 @@ export const firstLetter = (text: string | undefined) => {
 }
 export function getImage(icon: any) {
 	return `http://openweathermap.org/img/wn/${icon}.png`
+}
+
+export function getTime(time: string) {
+	const date = new Date(time)
+	const hours = date.getHours().toString().padStart(2, '0')
+	const minutes = date.getMinutes().toString().padStart(2, '0')
+	return `${hours}:${minutes}`
 }
